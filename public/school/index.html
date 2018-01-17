@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>대학수업</title>
+	<!-- 다양한 기기별 뷰포트 설정 -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- 아이콘 설정 -->
+	<!-- <link rel="shortcut icon" href="/assets/icons/favicon.ico"> -->
+	<!-- 모바일 주소창 색 바꾸기  -->
+	<meta name="theme-color" content="#ffffff">
+	<!-- 스타일시트 -->
+	<link rel="stylesheet" href="style.css">
+	<script src="main.js"></script>
+</head>
+<body>
+	<div class="container">
+		<input type="checkbox"  id="fast" >
+		<label class="red" onclick="checkRelation('fast')" for="fast">좋은 교수님</label>
+
+		<input type="checkbox"  id="good">
+		<label class="green" onclick="checkRelation('good')" for="good">좋은 시간대</label>
+
+		<input type="checkbox"  id="cheap">
+		<label class="blue" onclick="checkRelation('cheap')" for="cheap">과목이 쉬움</label>
+	</div>
+</body>

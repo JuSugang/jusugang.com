@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>주수강</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js
+	"></script>
+
+	<script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
+	<!-- Import and configure the Firebase SDK -->
+	<!-- These scripts are made available when the app is served or deployed on Firebase Hosting -->
+	<!-- If you do not serve/host your project using Firebase Hosting see https://firebase.google.com/docs/web/setup -->
+	<script src="/__/firebase/4.0.0/firebase-app.js"></script>
+	<script src="/__/firebase/4.0.0/firebase-auth.js"></script>
+	<script src="/__/firebase/4.0.0/firebase-database.js"></script>
+	<script src="/__/firebase/init.js"></script>
+
+	<style>
+	input[type=text], select, textarea {
+		width: 100%;
+		padding: 12px;
+		border: 1px solid #ccc;
+		border-radius: 4px;
+		box-sizing: border-box;
+		margin-top: 6px;
+		margin-bottom: 16px;
+		resize: vertical;
+	}
+
+	input[type=submit] {
+		background-color: #4CAF50;
+		color: white;
+		padding: 12px 20px;
+		border: none;
+		border-radius: 4px;
+		cursor: pointer;
+	}
+
+	input[type=submit]:hover {
+		background-color: #45a049;
+	}
+
+	.container {
+		border-radius: 5px;
+		background-color: #f2f2f2;
+		padding: 20px;
+	}
+</style>
+<script>
+
+		// Initialize Firebase
+		var config = {
+			apiKey: "AIzaSyDci9CB9afLxUygi108apTFik9X7tuCDmo",
+			authDomain: "brandsite-44ca8.firebaseapp.com",
+			databaseURL: "https://brandsite-44ca8.firebaseio.com",
+			projectId: "brandsite-44ca8",
+			storageBucket: "brandsite-44ca8.appspot.com",
+			messagingSenderId: "609178769588"
+		};
+		var database;
+		if (!firebase.apps.length) {
+			firebase.initializeApp(config);
+		}
+		database=firebase.database();
+	</script>
+</head>
+<body style="background-color:#282726;">
+	<div class="container" style="width:400px;margin:auto;text-align: center;">
+		<form action="/index.html">
+			<label for="title" style="font-size:24px;">제목</label><br>
+			<input type="text" id="title" name="title" placeholder="제목을 입력하세요" required="" maxlength="12" style="width:200px;">
+			<br>
+			<label for="content" style="font-size:24px;">내용</label>
+			<textarea id="content" name="content" placeholder="내용을 입력하세요" style="height:355px" required=""></textarea>
+			<input id="upload" type="submit" value="작성하기" style="background-color:#f9b26c;">
+		</form>
+	</div>
+	<script>
+
+		$(document).ready(function(){
+			function writeUserData(userId, email, title, content) {
+				firebase.database().ref('page/' + userId).set({
+					email: email,
+					title: title,
+					content : content
+				});
+			}
+			var contentCount=0;
+			var reader=firebase.database().ref('page/');
+			reader.on('value', function(snapshot) {
+				contentCount=snapshot.val().length;
+				if(contentCount==undefined){
+					contentCount=0;
+				}
+			});
+			$('#upload').click(function(){
+				var user=firebase.auth().currentUser;
+				var title=$('#title').val();
+				var content=$('#content').val();
+				content=contentEdit(content);
+				writeUserData(contentCount,user.email,title,content);
+			});
+			function contentEdit(content){
+				for(i=0;i<40;i++){
+					content=content.replace("\n", "<br>");
+				}
+				return content;
+			}
+		});
+	</script>
+</body>
+</html>

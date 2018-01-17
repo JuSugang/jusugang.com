@@ -1,0 +1,32 @@
+[debug] [2017-12-28T12:26:42.988Z] ----------------------------------------------------------------------
+[debug] [2017-12-28T12:26:42.990Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\tnrkd\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase serve
+[debug] [2017-12-28T12:26:42.990Z] CLI Version:   3.16.0
+[debug] [2017-12-28T12:26:42.990Z] Platform:      win32
+[debug] [2017-12-28T12:26:42.990Z] Node Version:  v8.7.0
+[debug] [2017-12-28T12:26:42.991Z] Time:          Thu Dec 28 2017 21:26:42 GMT+0900 (대한민국 표준시)
+[debug] [2017-12-28T12:26:42.991Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2017-12-28T12:26:43.007Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2017-12-28T12:26:43.008Z] > authorizing via signed-in user
+[debug] [2017-12-28T12:26:43.011Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/brandsite-44ca8  
+  
+ Thu Dec 28 2017 21:26:43 GMT+0900 (대한민국 표준시)
+[debug] [2017-12-28T12:26:44.257Z] <<< HTTP RESPONSE 200
+[debug] [2017-12-28T12:26:44.258Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/brandsite-44ca8/tokens  
+  
+ Thu Dec 28 2017 21:26:44 GMT+0900 (대한민국 표준시)
+[debug] [2017-12-28T12:26:45.091Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'C:\Users\tnrkd\Desktop\SUGANG\웹사이트\2018업데이트'...
+[info] 
+[debug] [2017-12-28T12:26:45.095Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/brandsite-44ca8  
+  
+ Thu Dec 28 2017 21:26:45 GMT+0900 (대한민국 표준시)
+[debug] [2017-12-28T12:26:46.177Z] <<< HTTP RESPONSE 200
+[debug] [2017-12-28T12:26:46.178Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/609178769588/clients/_:getWebAppConfig  
+  
+ Thu Dec 28 2017 21:26:46 GMT+0900 (대한민국 표준시)
+[debug] [2017-12-28T12:26:47.153Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: public
+[info] +  hosting: Local server: http://localhost:5000
+

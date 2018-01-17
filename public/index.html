@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>주수강</title>
+	<!-- 다양한 기기별 뷰포트 설정 -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- 아이콘 설정 -->
+	<!-- <link rel="shortcut icon" href="/assets/icons/favicon.ico"> -->
+	<!-- 모바일 주소창 색 바꾸기  -->
+	<meta name="theme-color" content="#ffffff">
+	<!-- 스타일시트 -->
+
+	<!-- JQuery Plugin -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js
+	"></script>
+	<!-- Turn.js Plugin -->
+  <script type="text/javascript" src="extras/jquery.min.1.7.js"></script>
+  <script type="text/javascript" src="extras/jquery-ui-1.8.20.custom.min.js"></script>
+  <script type="text/javascript" src="extras/jquery.mousewheel.min.js"></script>
+  <script type="text/javascript" src="extras/modernizr.2.5.3.min.js"></script>
+  <script type="text/javascript" src="lib/hash.js"></script>
+
+  <!-- ScrollMagic GreenSock Plugin -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.2/TweenMax.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/animation.gsap.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/debug.addIndicators.min.js"></script>
+
+  <!-- jQueryFullPage Plugin -->
+  <link rel="stylesheet" type="text/css" href="jquery.fullPage.css" />
+  <script type="text/javascript" src="jquery.fullPage.js"></script>
+
+  <!-- my css and js -->
+  <link rel="stylesheet" href="mainstyle11.css">
+  <script src="mainanim.js"></script>
+  <script src="login11.js"></script>
+  <script src="addpage.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
+  <!-- Import and configure the Firebase SDK -->
+  <!-- These scripts are made available when the app is served or deployed on Firebase Hosting -->
+  <!-- If you do not serve/host your project using Firebase Hosting see https://firebase.google.com/docs/web/setup -->
+  <script src="/__/firebase/4.0.0/firebase-app.js"></script>
+  <script src="/__/firebase/4.0.0/firebase-auth.js"></script>
+  <script src="/__/firebase/4.0.0/firebase-database.js"></script>
+  <script src="/__/firebase/init.js"></script>
+  <script>
+
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyDci9CB9afLxUygi108apTFik9X7tuCDmo",
+      authDomain: "brandsite-44ca8.firebaseapp.com",
+      databaseURL: "https://brandsite-44ca8.firebaseio.com",
+      projectId: "brandsite-44ca8",
+      storageBucket: "brandsite-44ca8.appspot.com",
+      messagingSenderId: "609178769588"
+    };
+    var database;
+    if (!firebase.apps.length) {
+      firebase.initializeApp(config);
+    }
+    database=firebase.database();
+    var reader=firebase.database().ref('page/');
+    var count=-1;
+    var contents;
+    reader.on('value', function(snapshot) {
+      console.log(snapshot.val());
+      count=snapshot.val().length;
+      if(count==undefined){
+          count=0;
+      }
+      contents=snapshot.val();
+      main(contents,count);
+    });
+  </script>
+</head>
+<body>
+  <img src="../assets/loading.png" alt="loading" id="loading">
+  <div id="loadingCover"></div>
+  <!-- 왼쪽 아래 주수강 마크 -->
+  <div id='vert' class="meter">주수강</div>
+  <!-- 오른쪽 아래 카피라이트 -->
+  <div class="copyright">— &copy; 2017 by JUSUGANG. All rights reserved.<br> 
+    <!-- 로그인 추가 class="loginform" -->
+  </div>
+  <div class="guitar"></div>
+
+  <div class="main">
+    <img id="mainBG" class="mainText" src="../assets/mainbg.svg" alt="mainBG">
+    <img id="mainLine" class="mainText" src="../assets/mainline.svg" alt="mainLine">
+    <img id="mainTitle" class="mainText" src="../assets/maintitle.svg" alt="mainTitle">
+    <img id="mainSub" class="mainText" src="../assets/mainsub.svg" alt="mainSub">
+    <img id="mainBorder" class="mainText" src="../assets/mainborder.svg" alt="mainBorder">
+    <img id="mainSugang" class="mainText" src="../assets/mainsugang.svg" alt="mainSugang">
+    <img id="triangle" class="mainText" src="../assets/triangle.svg" alt="triangle">
+  </div>
+  <div class="content-container" id="fullpage">
+    <div class="section" data-anchor="0">
+      <div id="main">
+      </div>
+    </div>
+    <div class="section" data-anchor="1">
+      <div id="intro">
+        <div id="upperBox">
+          <h1 id="upperTitle">안녕하세요.</h1>
+        </div>
+        <div id="lowerBox">
+          <h1 id="lowerTitle">안녕하세요.</h1>
+        </div>
+        <img src="../assets/introLine.svg" alt="introLine" id="introLine">
+      </div>
+    </div>
+    <div class="section" data-anchor="2">
+      <div id="sugang">
+        <img class="wordCloud" src="../assets/face00.svg" alt="wordCloud">
+        <img class="wordCloud" src="../assets/face01.svg" alt="wordCloud">
+        <img class="wordCloud" src="../assets/face02.svg" alt="wordCloud">
+        <img class="wordCloud" src="../assets/face03.svg" alt="wordCloud">
+        <img class="wordCloud" src="../assets/face04.svg" alt="wordCloud">
+        <img class="wordCloud" src="../assets/face05.svg" alt="wordCloud">
+        <img class="wordCloud" src="../assets/face06.svg" alt="wordCloud">
+        <img class="wordCloud" src="../assets/face07.svg" alt="wordCloud">
+        <img class="wordCloud" src="../assets/face08.svg" alt="wordCloud">
+        <img class="wordCloud" src="../assets/face09.svg" alt="wordCloud">
+        <img class="wordCloud" src="../assets/face10.svg" alt="wordCloud">
+        <img class="wordCloud" src="../assets/face11.svg" alt="wordCloud">
+        <img class="wordCloud" src="../assets/face12.svg" alt="wordCloud">
+        <h1 id="sugangHead"><img src="../assets/like.png" alt="like" id="headimg"></h1>
+      </div>
+    </div>
+    <div class="section" data-anchor="3">
+      <div id="workshop">
+        <div id="works">
+          <div class="perspective" id="frame0">
+            <a href="/school/index.html" target="_blank"><img src="../assets/workshop0.png" alt="work" class="work" id="album0">
+            </a>
+          </div>
+          <div class="perspective" id="frame1">
+            <a href="/hacker/index.html" target="_blank"><img src="../assets/workshop1.png" alt="work" class="work" id="album1">
+            </a>
+          </div>
+          <div class="perspective" id="frame2"> 
+            <a href="/berryblue/index.html" target="_blank"><img src="../assets/workshop2.png" alt="work" class="work" id="album2"></a>
+          </div>
+          <div class="perspective" id="frame3">
+            <a href="http://www.pupaider.com" target="_blank"><img src="../assets/workshop3.png" alt="work" class="work" id="album3"></a>
+          </div>
+          <div class="perspective" id="frame4">
+            <a href="#" target="_blank"><img src="../assets/workshop4.png" alt="work" class="work" id="album4">
+            </a>
+          </div>
+        </div>
+        <div class="workshopHeader">
+          <div class="scroll-button" ><img src="../assets/arrow-left.svg" id="left" alt="left"></div>
+          <div class="scroll-button" ><img src="../assets/arrow-right.svg" id="right" alt="right"></div>
+        </div>
+        <div class="workshop-title"><img src="../assets/workshopTitle.png" alt="title"></div>
+      </div>
+    </div>
+    <div class="section" data-anchor="4">
+      <div id="diary">
+        <div id="canvas">
+          <div id='inner' class="sample-docs">
+
+          </div>
+        </div>
+
+        <div id="login">
+          <span id="sign-in-status">방명록을 적으시려면 로그인해주세요.</span>
+          <span id="userInfo" style="display:none;">logout</span>
+          <br>
+          <input class="logininput" style="display:inline;width:auto;" type="text" id="email" name="email" placeholder="Email"/>
+          <input class="logininput" style="display:inline;width:auto;" type="password" id="password" name="password" placeholder="Password"/>
+          <br>
+          <button disabled class="loginbutton" id="sign-in" name="signin">로그인</button>
+          <button class="loginbutton" id="sign-up" name="signup">회원가입</button>
+
+        </div>
+
+        <script type="text/javascript">
+          $('#sign-in-status').click(function(){ 
+            var user=firebase.auth().currentUser;
+            if(user){
+              window.location.replace("/writePost.html");
+            }
+
+          });
+          function loadApp() {
+            var flipbook = $('.sample-docs');
+            if (flipbook.width()==0 || flipbook.height()==0) {
+              setTimeout(loadApp, 10);
+              return;
+            }
+            // Slider
+
+            Hash.on('^page\/([0-9]*)$', {
+              yep: function(path, parts) {
+                var page = parts[1];
+
+                if (page!==undefined) {
+                  if ($('.sample-docs').turn('is'))
+                    $('.sample-docs').turn('page', page);
+                }
+
+              },
+              nop: function(path) {
+
+                if ($('.sample-docs').turn('is'))
+                  $('.sample-docs').turn('page', 1);
+              }
+            });
+            // Arrows
+
+            $(document).keydown(function(e){
+
+              var previous = 37, next = 39;
+
+              switch (e.keyCode) {
+                case previous:
+
+                $('.sample-docs').turn('previous');
+
+                break;
+                case next:
+
+                $('.sample-docs').turn('next');
+
+                break;
+              }
+
+            });
+
+            flipbook.turn({
+              elevation: 50,
+              acceleration: false,
+              gradients: true,
+              autoCenter: true,
+              duration: 1000,
+              when: {
+
+                turning: function(e, page, view) {
+
+                  var book = $(this),
+                  currentPage = book.turn('page'),
+                  pages = book.turn('pages');
+
+                  if (currentPage>3 && currentPage<pages-3) {
+                    if (page==1) {
+                      book.turn('page', 2).turn('stop').turn('page', page);
+                      e.preventDefault();
+                      return;
+                    } else if (page==pages) {
+                      book.turn('page', pages-1).turn('stop').turn('page', page);
+                      e.preventDefault();
+                      return;
+                    }
+                  } else if (page>3 && page<pages-3) {
+                    if (currentPage==1) {
+                      book.turn('page', 2).turn('stop').turn('page', page);
+                      e.preventDefault();
+                      return;
+                    } else if (currentPage==pages) {
+                      book.turn('page', pages-1).turn('stop').turn('page', page);
+                      e.preventDefault();
+                      return;
+                    }
+                  }
+
+                  Hash.go('page/'+page).update();
+
+                  if (page==1 || page==pages)
+                    $('.sample-docs .tabs').hide();
+
+
+                },
+
+                turned: function(e, page, view) {
+                  var book = $(this);
+                  book.turn('center');
+                }
+              }
+
+            });
+            flipbook.addClass('animated');
+            // Show canvas
+
+            $('#canvas').css({visibility: 'visible'});
+          }
+          // Hide canvas
+          $('#canvas').css({visibility: 'hidden'});
+
+          
+        </script>
+      </div>  
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,575 @@
+/*모든 요소 기본 설정 */
+@import url(//fonts.googleapis.com/earlyaccess/jejugothic.css);
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	font-style: inherit;
+	font-variant-ligatures: inherit;
+	font-variant-caps: inherit;
+	font-variant-numeric: inherit;
+	font-weight: inherit;
+	font-stretch: inherit;
+	font-size: 100%;
+	line-height: inherit;
+	font-family: inherit;
+	vertical-align: baseline;
+
+}
+html,body{
+	background-color:white;
+	height:100%; 
+	transition: all 0.3s ease-out;
+}
+ol, ul{
+	list-style:none;
+}
+a{
+	text-decoration: none;
+}
+.hide{
+	display:none;
+	z-index: -10;
+}
+
+/*왼쪽 상단 로고*/
+.logo {
+	width: 250px;
+	height: 46px;
+	position: fixed;
+	top: 32px;
+	left: 32px;
+	cursor: pointer;
+	z-index: 80;
+	opacity: 1;
+}
+.logo-icon {
+	width: 46px;
+	height: 46px;
+	background: url("assets/logo.svg") no-repeat;
+	display: inline-block;
+}
+.logo-type {
+	width: 182px;
+	height: 36px;
+	background: url("assets/logotype.png") no-repeat;
+	display: inline-block;
+}
+
+/*사이드바*/
+.sidebar {
+	width: 48px;
+	height: 80px;
+	display: block;
+	position: fixed;
+	z-index: 12;
+	top: calc(50% - 7px);
+	left: 32px;
+
+}
+.sidebar-item {
+	width: 100%;
+	height: 9px;
+	padding-top: 7px;
+	display: block;
+	position: relative;
+}
+.sidebar-item .sidebar-line {
+	width: 50%;
+	height: 2px;
+	background: #B0B0B0;
+	display: block;
+}
+.sidebar-item:hover .sidebar-line {
+	background: linear-gradient(to right,  #ce3745 0%,  #4aa3da 100%);
+	transition: all ease-in-out 0.2s;
+}
+.gradient{
+	background: linear-gradient(to right,  #ce3745 0%,  #4aa3da 100%)!important;
+}
+/*미터기*/
+.meter {
+	font-family: 'Jeju Gothic', serif;
+	font-size: 15px;
+	color: #868686;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	z-index: 80;
+	transform: rotate(-90deg) translate(64px, 6px);
+}
+
+/*카피라이터*/
+.copyright {
+	position: fixed;
+	bottom: 32px;
+	right: 32px;
+	color: #868686;
+	font-size: 0.857em;
+	z-index: 80;
+}
+/*본문 전체 세팅 */
+.content-container {
+	width: 100%;
+	height: 100%;
+	display: block;
+
+}
+#intro{
+	width: 100%;
+	min-height: 100%;
+	display: block;
+	position: relative;
+	background-size: cover;
+	overflow-x: hidden;
+}
+#motivation {
+	width: 100%;
+	min-height: 100%;
+	display: block;
+	position: relative;
+	background-size: cover;
+	overflow-x: hidden;
+}
+#solution {
+	width: 100%;
+	min-height: 100%;
+	display: block;
+	position: relative;
+	background-size: cover;
+	overflow-x:hidden;
+}
+#jusugang {
+	width: 100%;
+	min-height: 100%;
+	display: block;
+	position: relative;
+	background-size: cover;
+	overflow-x: hidden;
+}
+#contactus {
+	width: 100%;
+	min-height: 100%;
+	display: block;
+	position: relative;
+	background-size: cover;
+	overflow-x: hidden;
+}
+.inner-container {
+	margin: 0 auto;
+	padding: 0;
+	min-height: 100%;
+	position: relative;
+}
+.headline-big {
+	text-align:center;
+	font-family: 'Jeju Gothic', serif;
+	font-weight: 500;
+	line-height: 1.091em;
+	margin: 20% 0 24px 0;
+	letter-spacing: -0.02em;
+}
+@media all and (min-width: 900px) {
+	.inner-container {
+		width: calc(70%);
+	}
+	.headline-big{
+		font-size: 3.5em;
+	}
+	.headline{
+		font-size: 2.5em;
+	}
+	.headline-small{
+		font-size: 3em;
+	}
+	.headline-gray{
+		font-size: 2em;
+	}
+	.motive-para{
+		margin: 0 50% 0 0 ;
+	}
+	.mail{
+		width:70%;
+	}
+	.loading{
+		padding-top:1%;
+		font-size: 350px;
+	}
+}
+/*중간화면크기*/
+@media all and (min-width: 700px) and (max-width: 900px) {
+	.inner-container {
+		width: calc(100% - 100px);
+	}
+	.headline-big{
+		font-size: 3.2em;
+	}
+	.headline{
+		font-size: 2em;
+	}
+	.headline-small{
+		font-size: 2.5em;
+	}
+	.headline-gray{
+		font-size: 1.7em;
+	}
+	.motive-para{
+		margin:0;
+	}
+	.sidebar{
+		width:24px;
+	}
+	.mail{
+		width:100%;
+	}
+	.loading{
+		padding-top:8%;
+		font-size: 200px;
+	}
+}
+/*작은화면크기*/
+@media all and (max-width: 700px) {
+	.inner-container {
+		width: calc(100% - 80px);
+	}
+	.headline-big{
+		font-size: 2.5em;
+	}
+	.headline{
+		font-size: 1.5em;
+	}
+	.headline-small{
+		font-size: 2em;
+	}
+	.headline-gray{
+		font-size: 1.5em;
+	}
+	.motive-para{
+		margin:0;
+	}
+	.sidebar{
+		width:25px;
+		left:20px;
+	}
+	.mail{
+		width:100%;
+	}
+	.jusuLogo{
+		left:-7%!important;
+		width:115%;
+	}
+	.loading{
+		padding-top:25%;
+		font-size: 100px;
+	}
+	.upper-text, .lower-text{
+		margin-left: -13px!important;
+		width: calc(100% + 40px)!important;
+	}
+	.logo {
+		top:23px;
+		left:23px;
+	}
+	.logo-icon {
+		width: 32px;
+		height: 32px;
+	}
+	.logo-type {
+		visibility:hidden!important;
+	}
+}
+
+.intro-message {
+	width: 100%;
+	position: absolute;
+	top: 20%;
+}
+.type-divider {
+	content: '';
+	width: 64px;
+	height: 16px;
+	margin: 4px auto;
+	background: url("assets/wave-line.svg") no-repeat;
+}
+.copy {
+	font-family: 'Jeju Gothic', serif;
+	width:48%;
+	line-height: 1.7em;
+	color: #868686;
+	margin: 0 auto;
+	text-align:center;
+}
+@media all and (max-width: 600px) {
+	.copy {
+		width: 100%;
+	}
+}
+.circle{
+	width:572px;
+	height:572px;
+	z-index: 5;
+	top: 13%/*calc(38% - 286px)*/;
+	left: calc(50% - 286px);
+	position:absolute;
+	opacity:0;
+	background: url("assets/1Circle.PNG") no-repeat;
+	transition: all 1s ease-out;
+	overflow-x: hidden;
+}
+.loading{
+	font-family: 'Jeju Gothic', serif;
+	font-weight: 600;
+	color:#f8f8f8;
+	position:absolute;
+	left:8%;
+	z-index:0;
+	transition: all 0.3s ease-out;
+	overflow:hidden;
+}
+.upper-text{
+	position:fixed;
+	width: 100%;
+	height:50%;
+	top:0px;
+	overflow:hidden;
+	
+}
+.upper-text h1{
+	top:50%;
+}
+.lower-text{
+	position:fixed;
+	width: 100%;
+	height:50%;
+	overflow:hidden;
+	top:50%;
+	border-top: 2px solid #f7f7f7;
+}
+.lower-text h1{
+	top:-50%;
+}
+
+.blackLine{
+	border-top: 1px solid #212121;
+}
+.col-center {
+	align-self: center;
+}
+
+
+/*동기 페이지*/
+.motivation-message{
+	margin:12% 0 0 0;
+}
+.headline {
+	font-family: 'Jeju Gothic', serif;
+	color:#ffffff;
+	font-weight: 500;
+	line-height: 1.5em;
+	margin: 0 0 32px 0;
+}
+.motive-para {
+	font-family: 'Jeju Gothic', serif;
+	line-height: 1.7em;
+	color: #868686;
+
+}
+.btn-prim {
+	font-family: 'Jeju Gothic', serif;
+	height: 40px;
+	padding: 0 32px;
+	margin: 30px 16px 16px 0;
+	border-radius: 20px;
+	font-size: 0.786em;
+	color: #fff;
+	line-height: 40px;
+	letter-spacing: 0.24em;
+	display: inline-block;
+	cursor: pointer;
+	position: relative;
+	overflow: hidden;
+	border-left: 3px solid #ce3745;
+	border-right: 3px solid #4aa3da;
+	background: #000000;
+	transition: all 0.3s ease-in-out;
+}
+.btn-prim:hover {
+	border-left: 3px solid #4aa3da;
+	border-right: 3px solid #ce3745;
+
+}
+/*해결과제 페이지*/
+
+.headline-small{
+	font-family: 'Jeju Gothic', serif;
+	color:#000000;
+	font-weight: 500;
+	line-height: 1.1em;
+	margin: 5% 0 32px 0;
+	z-index:10;
+	position:relative;
+}
+.devices{
+	position:absolute;
+	top:70%;
+}
+
+.solu-para{
+	font-family: 'Jeju Gothic', serif;
+	line-height: 1.4em;
+	color: #868686;
+	margin: 0 auto;
+}
+.wave{
+	position:absolute;
+	top:0%;
+	left:calc(50% - 300px);
+}
+
+#server{
+	left:83%;
+}
+#notebook{
+	left:-30%;
+}
+#phone{
+	left:54%;
+}
+#watch{
+	left:65%;
+}
+
+
+/*주수강 페이지*/
+.jusuPara {
+	position:relative;
+	font-family: 'Jeju Gothic', serif;
+	width:100%;
+	line-height: 1.7em;
+	color: #868686;
+	z-index:10;
+
+}
+.case-nav {
+	position:relative;
+	z-index: 10;
+	width: 116px;
+	height: 48px;
+	margin: 40px 0 70px 0;
+}
+.case-nav-item {
+	width: 48px;
+	height: 48px;
+	border-radius: 100%;
+	border: 1px solid #D8D8D8;
+	display: inline-block;
+	float: left;
+	margin: 0 8px 0 0;
+	cursor: pointer;
+	position: relative;
+	transition: all ease-in-out 0.2s;
+	overflow: hidden;
+}
+.case-nav-item:hover {
+	border: 1px solid #868686;
+}
+.case-nav-left::before {
+	content: '';
+	height: 46px;
+	width: 46px;
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;8
+	transform: translate(0,  0);
+	background: url("assets/arrow-left.svg") no-repeat;
+	transition: all ease-in-out 0.2s;
+}
+.case-nav-left::after {
+	content: '';
+	height: 46px;
+	width: 46px;
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	transform: translate(100%,  0);
+	background: url("assets/arrow-left.svg") no-repeat;
+	transition: all ease-in-out 0.2s;
+}
+.case-nav-right::before {
+	content: '';
+	height: 46px;
+	width: 46px;
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	transform: translate(0,  0);
+	background: url("assets/arrow-right.svg") no-repeat;
+	transition: all ease-in-out 0.2s;
+}
+.case-nav-right::after {
+	content: '';
+	height: 46px;
+	width: 46px;
+	display: block;
+	position: absolute;
+	top: 0;
+	right: 0;
+	transform: translate(-100%,  0);
+	background: url("assets/arrow-right.svg") no-repeat;
+	transition: all ease-in-out 0.2s;
+}
+.case-nav-left:hover::before {
+	transform: translate(-100%,  0);
+	transition: all ease-in-out 0.2s;
+}
+.case-nav-left:hover::after {
+	transform: translate(0,  0);
+	transition: all ease-in-out 0.2s;
+}
+.case-nav-right:hover::before {
+	transform: translate(100%,  0);
+	transition: all ease-in-out 0.2s;
+}
+.case-nav-right:hover::after {
+	transform: translate(0,  0);
+	transition: all ease-in-out 0.2s;
+}
+.jusuLogo{
+	position:absolute;
+	top:0%;	
+	left:calc(50% - 355px);
+	z-index:0;
+}
+.headline-gray{
+	z-index:10;
+	position:relative;
+	font-family: 'Jeju Gothic', serif;
+	color:#bbbbbb;
+	font-weight: 500;
+	line-height: 0.7em;
+	margin: 0 0 32px 0;
+	transition: all ease-in-out 0.3s;
+}
+.selected{
+	color:#000000;
+}
+
+/*컨텍트 페이지*/
+.mail{
+	display:inline;
+	float:left;
+}
+.mail-content{
+	padding-top: 9%; 
+}
+.floating{
+	float:left;
+	display:inline;
+}
+
+
